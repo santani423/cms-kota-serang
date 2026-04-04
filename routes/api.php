@@ -5,3 +5,4 @@ use App\Http\Controllers\Api\HomepageController;
 use App\Http\Controllers\Api\SettingsController;
 
 Route::get('/homepage', [HomepageController::class, 'index']);
+Route::get('/settings/cormenu', [SettingsController::class, 'cormenu']);
