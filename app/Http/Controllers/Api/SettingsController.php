@@ -66,34 +66,7 @@ class SettingsController extends Controller
                         "desc" => "",
                     ],
                 ],
-            ],
-            [
-                "code" => "informasi-publik",
-                "title" => "Informasi Publik",
-                "href" => "/informasi-publik",
-                "subMenu" => [
-                    [
-                        "title" => "Profil Pemerintah",
-                        "href" => "/informasi-publik/profil",
-                        "desc" => "Informasi struktur dan profil pemerintah daerah",
-                    ],
-                    [
-                        "title" => "Visi & Misi",
-                        "href" => "/informasi-publik/visi-misi",
-                        "desc" => "Arah pembangunan dan tujuan daerah",
-                    ],
-                    [
-                        "title" => "Dokumen Publik",
-                        "href" => "/informasi-publik/dokumen",
-                        "desc" => "Akses dokumen resmi dan laporan",
-                    ],
-                    [
-                        "title" => "PPID",
-                        "href" => "/informasi-publik/ppid",
-                        "desc" => "Pejabat Pengelola Informasi dan Dokumentasi",
-                    ],
-                ],
-            ],
+            ], 
             [
                 "code" => "berita",
                 "title" => "Berita",
