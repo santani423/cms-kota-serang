@@ -66,7 +66,7 @@ class SettingsController extends Controller
                         "desc" => "",
                     ],
                 ],
-            ], 
+            ],
             [
                 "code" => "berita",
                 "title" => "Berita",
@@ -76,6 +76,35 @@ class SettingsController extends Controller
                 "code" => "wisata",
                 "title" => "Wisata",
                 "href" => "/tourism",
+            ],
+        ];
+
+        return response()->json([
+            "status" => "success",
+            "data" => $data,
+        ]);
+    }
+
+    public function imageHompage()
+    {
+
+        $baseUrl = env('APP_URL');
+        $data = [
+            [
+                'code' => 'img1',
+                'path' => $baseUrl . '/assets/hompage/1.jpg',
+            ],
+            [
+                'code' => 'img2',
+                'path' => $baseUrl . '/assets/hompage/2.jpg',
+            ],
+            [
+                'code' => 'img3',
+                'path' => $baseUrl . '/assets/hompage/3.jpg',
+            ],
+            [
+                'code' => 'img4',
+                'path' => $baseUrl . '/assets/hompage/4.jpg',
             ],
         ];
 

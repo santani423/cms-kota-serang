@@ -6,3 +6,4 @@ use App\Http\Controllers\Api\SettingsController;
 
 Route::get('/homepage', [HomepageController::class, 'index']);
 Route::get('/settings/cormenu', [SettingsController::class, 'cormenu']);
+Route::get('/settings/image-homepage', [SettingsController::class, 'imageHomepage']);
