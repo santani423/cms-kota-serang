@@ -85,7 +85,7 @@ class SettingsController extends Controller
         ]);
     }
 
-    public function imageHompage()
+    public function imageHomepage()
     {
 
         $baseUrl = env('APP_URL');
