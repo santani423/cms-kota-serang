@@ -106,6 +106,9 @@ class SettingsController extends Controller
             ],
         ];
 
-        return response()->json($data);
+        return response()->json([
+            "status" => "success",
+            "data" => $data,
+        ]);
     }
 }
