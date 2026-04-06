@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('featured_image')->nullable();
             $table->enum('status', ['draft', 'pending', 'published', 'archived'])->default('draft');
             $table->timestamp('published_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
             $table->unsignedBigInteger('view_count')->default(0);
             $table->timestamps();
         });
