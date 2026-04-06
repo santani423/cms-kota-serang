@@ -323,6 +323,23 @@ class SettingsController extends Controller
                     "gradient" => "from-purple-500 via-indigo-500 to-blue-500",
                 ],
             ],
+            'ServiceFeatures' => [
+                [
+                    "icon" => "Clock",
+                    "title" => "Respons 1×24 Jam",
+                    "desc" => "Ditindaklanjuti dalam 24 jam",
+                ],
+                [
+                    "icon" => "ShieldCheck",
+                    "title" => "Identitas Terlindungi",
+                    "desc" => "Data aman & rahasia",
+                ],
+                [
+                    "icon" => "BarChart",
+                    "title" => "Tracking Real-time",
+                    "desc" => "Pantau progres laporan",
+                ],
+            ]
         ];
 
         return response()->json([
