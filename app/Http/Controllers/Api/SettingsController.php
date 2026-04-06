@@ -305,7 +305,24 @@ class SettingsController extends Controller
                     "color" => "text-cyan-600 dark:text-cyan-400",
                     "bgColor" => "bg-cyan-50 dark:bg-cyan-900/20",
                 ],
-            ]
+            ],
+            'PerformanceMetrics' => [
+                [
+                    "label" => "Realisasi APBD 2025",
+                    "value" => 87,
+                    "gradient" => "from-blue-500 via-indigo-500 to-emerald-400",
+                ],
+                [
+                    "label" => "Tingkat Literasi Digital",
+                    "value" => 74,
+                    "gradient" => "from-emerald-500 via-green-400 to-teal-300",
+                ],
+                [
+                    "label" => "Cakupan Layanan Online",
+                    "value" => 92,
+                    "gradient" => "from-purple-500 via-indigo-500 to-blue-500",
+                ],
+            ],
         ];
 
         return response()->json([
