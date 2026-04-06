@@ -113,4 +113,145 @@ class SettingsController extends Controller
             "data" => $data,
         ]);
     }
+
+    public function getHomepage(Request $request)
+    {
+
+        $data = [
+            'title' => 'Selamat Datang di Homepage',
+            'description' => 'Ini adalah API homepage.',
+            'date' => now()->toDateString(),
+            'StatistikHeroSection' => [
+                [
+                    'code' => 'stat1',
+                    'title' => 'Penduduk',
+                    'value' => '750K+',
+                    'desc' => 'Jumlah penduduk di Kota Serang',
+                ],
+                [
+                    'code' => 'stat2',
+                    'title' => 'Kecamatan',
+                    'value' => '6',
+                    'desc' => 'Kecamatan di Kota Serang',
+                ],
+                [
+                    'code' => 'stat3',
+                    'title' => 'Layanan Publik',
+                    'value' => '30+',
+                    'desc' => 'Jumlah layanan publik di Kota Serang',
+                ],
+            ],
+            'QuickServicesSection' => [
+                [
+                    'icon' => 'FileText',
+                    'title' => "Perizinan Online",
+                    'desc' => "Ajukan izin usaha, IMB, dan dokumen lainnya secara digital tanpa antri.",
+                    'color' => "text-blue-600 dark:text-blue-400",
+                    'bgColor' => "bg-blue-50 dark:bg-blue-900/20",
+                    'span' => "col-span-1 md:col-span-2",
+                    'href' => "/public-services",
+                ],
+                [
+                    'icon' => 'IdCard',
+                    'title' => "Kependudukan",
+                    'desc' => "KTP, KK, Akta — semua dalam satu platform.",
+                    'color' => "text-accent-dark dark:text-accent-light",
+                    'bgColor' => "bg-accent-50 dark:bg-accent/10",
+                    'href' => "/public-services",
+                ],
+                [
+                    'icon' => 'Heart',
+                    'title' => "Layanan Kesehatan",
+                    'desc' => "Jadwal Puskesmas, rujukan, dan informasi kesehatan warga.",
+                    'color' => "text-rose-600 dark:text-rose-400",
+                    'bgColor' => "bg-rose-50 dark:bg-rose-900/20",
+                    'href' => "/public-services",
+                ],
+                [
+                    'icon' => 'GraduationCap',
+                    'title' => "Pendidikan",
+                    'desc' => "Pendaftaran sekolah, beasiswa, dan data pendidikan kota.",
+                    'color' => "text-violet-600 dark:text-violet-400",
+                    'bgColor' => "bg-violet-50 dark:bg-violet-900/20",
+                    'href' => "/public-services",
+                ],
+                [
+                    'icon' => 'Truck',
+                    'title' => "Infrastruktur",
+                    'desc' => "Laporkan kerusakan jalan, lampu, dan fasilitas umum.",
+                    'color' => "text-amber-600 dark:text-amber-400",
+                    'bgColor' => "bg-amber-50 dark:bg-amber-900/20",
+                    'href' => "/public-services",
+                ],
+                [
+                    'icon' => 'Store',
+                    'title' => "UMKM & Investasi",
+                    'desc' => "Dukung pertumbuhan ekonomi lokal dengan kemudahan perizinan UMKM.",
+                    'color' => "text-primary-700 dark:text-primary-light",
+                    'bgColor' => "bg-primary-50 dark:bg-primary-900/20",
+                    'span' => "col-span-1 md:col-span-2",
+                    'href' => "/public-services",
+                ]
+            ],
+            'NewsItemHompage' => [
+                [
+                    'id' => 1,
+                    'category' => "Pembangunan",
+                    'title' =>
+                    "Pemkot Serang Resmikan Taman Digital Interaktif di Kawasan Pusat Kota",
+                    'excerpt' =>
+                    "Wali Kota Serang meresmikan taman digital pertama di Banten yang dilengkapi fasilitas Wi-Fi gratis, area co-working outdoor, dan instalasi seni interaktif berbasis teknologi.",
+                    'date' => "2026-03-25",
+                    'author' => "Humas Pemkot Serang",
+                    'image' =>
+                    "https://img.rocket.new/generatedImages/rocket_gen_img_11b6f0c0a-1766576933251.png",
+                    'alt' => "Taman digital modern",
+                    'featured' => true,
+                ],
+                [
+                    'id' => 2,
+                    'category' => "Layanan Publik",
+                    'title' =>
+                    "Sistem Antrian Digital Puskesmas Kini Terintegrasi Portal SerangKota",
+                    'excerpt' =>
+                    "Warga kini dapat mendaftar antrian Puskesmas dari rumah melalui portal resmi kota.",
+                    'date' => "2026-03-22",
+                    'author' => "Dinas Kesehatan",
+                    'image' =>
+                    "https://img.rocket.new/generatedImages/rocket_gen_img_1ddcb448a-1768154076773.png",
+                    'alt' => "Sistem digital Puskesmas",
+                ],
+                [
+                    'id' => 3,
+                    'category' => "Ekonomi",
+                    'title' =>
+                    "Pasar UMKM Digital Serang Catat Transaksi Rp 4,2 Miliar di Kuartal I",
+                    'excerpt' =>
+                    "Program digitalisasi UMKM berhasil meningkatkan omzet pedagang lokal.",
+                    'date' => "2026-03-20",
+                    'author' => "Dinas Perdagangan",
+                    'image' =>
+                    "https://img.rocket.new/generatedImages/rocket_gen_img_101358c49-1772054905122.png",
+                    'alt' => "UMKM digital",
+                ],
+                [
+                    'id' => 4,
+                    'category' => "Pendidikan",
+                    'title' => "Serang Raih Penghargaan Kota Literasi Digital Terbaik",
+                    'excerpt' =>
+                    "Program literasi digital menjangkau 120 sekolah di seluruh kecamatan.",
+                    'date' => "2026-03-18",
+                    'author' => "Dinas Pendidikan",
+                    'image' =>
+                    "https://img.rocket.new/generatedImages/rocket_gen_img_1fe4dd004-1773800272776.png",
+                    'alt' => "Siswa belajar digital",
+                ],
+            ]
+        ];
+
+        return response()->json([
+            "status" => "success",
+            "data" => $data,
+        ]);
+    }
 }
