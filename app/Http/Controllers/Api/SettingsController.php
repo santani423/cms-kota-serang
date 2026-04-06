@@ -124,19 +124,22 @@ class SettingsController extends Controller
             'StatistikHeroSection' => [
                 [
                     'code' => 'stat1',
-                    'title' => 'Penduduk',
+                    'icon' => 'Users',
+                    'label' => 'Penduduk',
                     'value' => '750K+',
                     'desc' => 'Jumlah penduduk di Kota Serang',
                 ],
                 [
                     'code' => 'stat2',
-                    'title' => 'Kecamatan',
+                    'icon' => 'Building2',
+                    'label' => 'Kecamatan',
                     'value' => '6',
                     'desc' => 'Kecamatan di Kota Serang',
                 ],
                 [
                     'code' => 'stat3',
-                    'title' => 'Layanan Publik',
+                    'icon' => 'Clock',
+                    'label' => 'Layanan Publik',
                     'value' => '30+',
                     'desc' => 'Jumlah layanan publik di Kota Serang',
                 ],
