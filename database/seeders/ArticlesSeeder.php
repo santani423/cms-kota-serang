@@ -15,9 +15,12 @@ class ArticlesSeeder extends Seeder
     {
         // Seeder untuk Categories
         Categories::insert([
-            ['name' => 'Teknologi', 'slug' => 'teknologi'],
-            ['name' => 'Pendidikan', 'slug' => 'pendidikan'],
-            ['name' => 'Olahraga', 'slug' => 'olahraga'],
+            ['name' => 'Layanan Publik', 'slug' => 'layanan-publik' ,'style' => 'bg-accent-50 text-accent-dark dark:bg-accent/15 dark:text-accent-light'],
+            ['name' => 'Ekonomi', 'slug' => 'ekonomi', 'style' => 'bg-amber-50 text-amber-700 dark:bg-amber-900/20 dark:text-amber-300'],
+            ['name' => 'Pendidikan', 'slug' => 'pendidikan', 'style' => 'bg-violet-50 text-violet-700 dark:bg-violet-900/20 dark:text-violet-300'],
+            ['name' => 'Lingkungan', 'slug' => 'lingkungan', 'style' => 'bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-300'],
+            ['name' => 'Infrastruktur', 'slug' => 'infrastruktur', 'style' => 'bg-orange-50 text-orange-700 dark:bg-orange-900/20 dark:text-orange-300'],
+            ['name' => 'Sosial', 'slug' => 'sosial', 'style' => 'bg-rose-50 text-rose-700 dark:bg-rose-900/20 dark:text-rose-300'],
         ]);
 
         // Seeder untuk Tags
