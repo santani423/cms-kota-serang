@@ -133,7 +133,7 @@ class SettingsController extends Controller
                     'code' => 'stat2',
                     'icon' => 'Building2',
                     'label' => 'Kecamatan',
-                    'value' => '6',
+                    'value' => '60+',
                     'desc' => 'Kecamatan di Kota Serang',
                 ],
                 [
