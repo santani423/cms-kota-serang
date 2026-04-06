@@ -196,7 +196,7 @@ class SettingsController extends Controller
                     'href' => "/public-services",
                 ]
             ],
-            'NewsItemHompage' => [
+            'NewsItemHomepage' => [
                 [
                     'id' => 1,
                     'category' => "Pembangunan",
