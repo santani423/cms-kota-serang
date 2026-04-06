@@ -339,7 +339,34 @@ class SettingsController extends Controller
                     "title" => "Tracking Real-time",
                     "desc" => "Pantau progres laporan",
                 ],
-            ]
+            ],
+            'CategoryAspirasi' => [
+                [
+                    "code" => "infrastruktur",
+                    "title" => "Infrastruktur",
+                    "icon" => "Road",
+                ],
+                [
+                    "code" => "kesehatan",
+                    "title" => "Kesehatan",
+                    "icon" => "Heart",
+                ],
+                [
+                    "code" => "pendidikan",
+                    "title" => "Pendidikan",
+                    "icon" => "AcademicCap",
+                ],
+                [
+                    "code" => "lingkungan",
+                    "title" => "Lingkungan",
+                    "icon" => "Leaf",
+                ],
+                [
+                    "code" => "ekonomi",
+                    "title" => "Ekonomi & UMKM",
+                    "icon" => "Storefront",
+                ],
+            ],
         ];
 
         return response()->json([
