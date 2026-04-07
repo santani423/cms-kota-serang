@@ -9,39 +9,52 @@ class Articles extends Model
     protected $table = 'articles';
 
     protected $fillable = [
+        'author_id',
         'title',
+        'slug',
+        'excerpt',
+        'alt',
         'content',
-        'article_category_id',
+        'featured_image',
+        'status',
+        'published_at',
+        'view_count',
     ];
 
     /**
-     * Relasi ke tabel article_categories
+     * Relasi many-to-many ke Categories (via pivot)
      */
-    public function articleCategory()
+    public function categories()
     {
-        return $this->belongsTo(ArticleCategories::class, 'article_category_id', 'id');
-    }
-
-    /**
-     * Shortcut langsung ke Categories (optional, tapi recommended)
-     */
-    public function category()
-    {
-        return $this->hasOneThrough(
+        return $this->belongsToMany(
             Categories::class,
-            ArticleCategories::class,
-            'article_id', // Foreign key di article_categories
-            'category_id', // Foreign key di categories
-            'id', // FK di articles
-            'id' // FK di article_categories
+            'article_categories',
+            'article_id',
+            'category_id'
         );
     }
 
     /**
-     * Accessor untuk ambil nama category langsung
+     * Accessor: ambil 1 category (misalnya untuk highlight)
      */
     public function getCategoryNameAttribute()
     {
-        return optional($this->articleCategory->category)->name;
+        return $this->categories->first()->name ?? null;
+    }
+
+    /**
+     * Accessor: ambil semua category (array)
+     */
+    public function getCategoryNamesAttribute()
+    {
+        return $this->categories->pluck('name');
+    }
+
+    /**
+     * Accessor: format string (siap tampil)
+     */
+    public function getCategoryListAttribute()
+    {
+        return $this->categories->pluck('name')->implode(', ');
     }
 }
