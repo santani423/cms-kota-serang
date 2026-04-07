@@ -33,6 +33,16 @@ class Articles extends Model
             'category_id'
         );
     }
+    /**
+     * Relasi many-to-one ke User (author)
+     */
+    public function author()
+    {
+        return $this->belongsTo(
+            User::class,
+            'author_id'
+        );
+    }
 
     /**
      * Accessor: ambil 1 category (misalnya untuk highlight)
