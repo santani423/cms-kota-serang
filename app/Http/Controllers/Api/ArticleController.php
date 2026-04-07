@@ -21,7 +21,10 @@ class ArticleController extends Controller
                 'content',
                 'featured_image',
                 'status',
-                'published_at','categories.name as category_name','author.name as author_name','tags.name as tag_name'
+                'published_at',
+                // 'categories.name as category_name',
+                // 'author.name as author_name',
+                // 'tags.name as tag_name'
             )->get();
             return response()->json([
                 'success' => true,
