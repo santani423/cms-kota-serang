@@ -13,19 +13,7 @@ class ArticleController extends Controller
     public function index()
     {
         try {
-            $articles = Articles::with(['categories', 'author', 'tags'])->select(
-                'title',
-                'slug',
-                'excerpt',
-                'alt',
-                'content',
-                'featured_image',
-                'status',
-                'published_at',
-                'categories.*',
-                // 'author.name as author_name',
-                // 'tags.name as tag_name'
-            )->get();
+            $articles = Articles::with(['categories', 'author', 'tags'])->get();
             return response()->json([
                 'success' => true,
                 'data' => $articles
