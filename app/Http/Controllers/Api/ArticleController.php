@@ -22,7 +22,7 @@ class ArticleController extends Controller
                 'featured_image',
                 'status',
                 'published_at',
-                // 'categories.name as category_name',
+                'categories.*',
                 // 'author.name as author_name',
                 // 'tags.name as tag_name'
             )->get();
