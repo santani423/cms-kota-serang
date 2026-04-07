@@ -9,6 +9,25 @@ use App\Models\Categories;
 
 class ArticleController extends Controller
 {
+
+    public function index()
+    {
+        try {
+            $articles = Articles::with('category')->get();
+            return response()->json([
+                'success' => true,
+                'data' => $articles
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to retrieve articles',
+                'error' => $e->getMessage()
+            ], 500);
+        }
+    }
+
+
     public function categories()
     {
 

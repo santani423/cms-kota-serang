@@ -11,4 +11,5 @@ Route::get('/settings/homepage', [SettingsController::class, 'getHomepage']);
 Route::get('/settings/image-homepage', [SettingsController::class, 'imageHomepage']);
 
 // articles
+Route::get('/articles', [ArticleController::class, 'index']);
 Route::get('/articles/categories', [ArticleController::class, 'categories']);
