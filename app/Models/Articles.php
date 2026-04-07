@@ -8,6 +8,6 @@ class Articles extends Model
 {
     public function category()
     {
-        return $this->belongsTo(Categories::class, 'category_id');
+        return $this->belongsTo(ArticleCategories::class, 'article_id', 'id');
     }
 }
