@@ -30,10 +30,10 @@ class Articles extends Model
         return $this->hasOneThrough(
             Categories::class,
             ArticleCategories::class,
-            'id', // Foreign key di article_categories
-            'id', // Foreign key di categories
-            'article_category_id', // FK di articles
-            'category_id' // FK di article_categories
+            'article_id', // Foreign key di article_categories
+            'category_id', // Foreign key di categories
+            'id', // FK di articles
+            'id' // FK di article_categories
         );
     }
 
