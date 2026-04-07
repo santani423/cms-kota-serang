@@ -38,10 +38,7 @@ class Articles extends Model
      */
     public function author()
     {
-        return $this->belongsTo(
-            User::class,
-            'author_id'
-        );
+        return $this->belongsTo(User::class, 'author_id', 'id');
     }
 
     /**
@@ -66,5 +63,17 @@ class Articles extends Model
     public function getCategoryListAttribute()
     {
         return $this->categories->pluck('name')->implode(', ');
+    }
+    /**
+     * Relasi many-to-many ke ArticleTags (via pivot)
+     */
+    public function tags()
+    {
+        return $this->belongsToMany(
+            Tags::class,
+            'article_tags',
+            'article_id',
+            'tag_id'
+        );
     }
 }
