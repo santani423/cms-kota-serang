@@ -27,6 +27,23 @@ class ArticleController extends Controller
         }
     }
 
+    public function inRandomOrder()
+    {
+        try {
+            $articles = Articles::with(['categories', 'author', 'tags'])->inRandomOrder()->first();
+            return response()->json([
+                'success' => true,
+                'data' => $articles
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to retrieve articles',
+                'error' => $e->getMessage()
+            ], 500);
+        }
+    }
+
 
     public function categories()
     {

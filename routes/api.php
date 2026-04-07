@@ -13,3 +13,4 @@ Route::get('/settings/image-homepage', [SettingsController::class, 'imageHomepag
 // articles
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::get('/articles/categories', [ArticleController::class, 'categories']);
+Route::get('/articles/random', [ArticleController::class, 'inRandomOrder']);
