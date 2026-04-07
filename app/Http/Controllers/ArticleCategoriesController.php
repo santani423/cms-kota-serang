@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\article_categories;
+use App\Models\ArticleCategories;
 use Illuminate\Http\Request;
 
 class ArticleCategoriesController extends Controller
@@ -34,7 +34,7 @@ class ArticleCategoriesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(article_categories $article_categories)
+    public function show(ArticleCategories $ArticleCategories)
     {
         //
     }
@@ -42,7 +42,7 @@ class ArticleCategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(article_categories $article_categories)
+    public function edit(ArticleCategories $ArticleCategories)
     {
         //
     }
@@ -50,7 +50,7 @@ class ArticleCategoriesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, article_categories $article_categories)
+    public function update(Request $request, ArticleCategories $ArticleCategories)
     {
         //
     }
@@ -58,7 +58,7 @@ class ArticleCategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(article_categories $article_categories)
+    public function destroy(ArticleCategories $ArticleCategories)
     {
         //
     }
