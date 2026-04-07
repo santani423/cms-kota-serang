@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title', 255);
             $table->string('slug')->unique();
             $table->text('excerpt')->nullable();
+            $table->text('alt')->nullable();
             $table->longText('content');
             $table->string('featured_image')->nullable();
             $table->enum('status', ['draft', 'pending', 'published', 'archived'])->default('draft');
