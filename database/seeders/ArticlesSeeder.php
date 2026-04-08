@@ -17,7 +17,7 @@ class ArticlesSeeder extends Seeder
         // ======================
         // Categories
         // ======================
-        $categories = Categories::insertGetId([
+        Categories::insert([
             ['code' => 'CAT01', 'name' => 'Layanan Publik', 'slug' => 'layanan-publik' ,'style' => 'bg-accent-50 text-accent-dark'],
             ['code' => 'CAT02', 'name' => 'Ekonomi', 'slug' => 'ekonomi', 'style' => 'bg-amber-50 text-amber-700'],
             ['code' => 'CAT03', 'name' => 'Pendidikan', 'slug' => 'pendidikan', 'style' => 'bg-violet-50 text-violet-700'],
