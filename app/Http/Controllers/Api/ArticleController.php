@@ -15,10 +15,9 @@ class ArticleController extends Controller
         try {
             $query = Articles::with(['categories', 'author', 'tags']);
 
-            // Filter by category
+            // Filter berdasarkan kategori
             if ($request->filled('category')) {
                 $category = $request->get('category');
-
                 $query->whereHas('categories', function ($q) use ($category) {
                     $q->where(function ($sub) use ($category) {
                         $sub->where('categories.id', $category)
@@ -28,10 +27,9 @@ class ArticleController extends Controller
                 });
             }
 
-            // Filter by author
+            // Filter berdasarkan author
             if ($request->filled('author')) {
                 $author = $request->get('author');
-
                 $query->whereHas('author', function ($q) use ($author) {
                     $q->where(function ($sub) use ($author) {
                         $sub->where('users.id', $author)
@@ -40,17 +38,31 @@ class ArticleController extends Controller
                 });
             }
 
-            // Sorting (default: terbaru)
+            // --- PENYESUAIAN JUMLAH DATA (PER PAGE) ---
+            // Ambil dari parameter 'per_page', jika tidak ada pakai default 10.
+            // Kita batasi maksimal 100 agar user tidak narik data terlalu banyak sekaligus (mencegah lag).
+            $perPage = (int) $request->get('per_page', 10);
+            if ($perPage <= 0) $perPage = 10; // Antisipasi angka negatif
+            $perPage = min($perPage, 100);
+
+            // Sorting
             $query->latest();
 
-            // Pagination (limit biar aman)
-            $perPage = min($request->get('per_page', 10), 50);
-
+            // Eksekusi Pagination
             $articles = $query->paginate($perPage)->appends($request->query());
 
             return response()->json([
                 'success' => true,
-                'data' => $articles
+                'message' => 'Data artikel berhasil diambil',
+                'current_page' => $articles->currentPage(),
+                'per_page' => $articles->perPage(),
+                'total_data' => $articles->total(),
+                'data' => $articles->items(), // Mengambil array data saja
+                'pagination' => [
+                    'next_page_url' => $articles->nextPageUrl(),
+                    'prev_page_url' => $articles->previousPageUrl(),
+                    'last_page' => $articles->lastPage(),
+                ]
             ], 200);
         } catch (\Throwable $e) {
             return response()->json([
