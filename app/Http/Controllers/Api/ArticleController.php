@@ -10,19 +10,53 @@ use App\Models\Categories;
 class ArticleController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         try {
-            $articles = Articles::with(['categories', 'author', 'tags'])->get();
+            $query = Articles::with(['categories', 'author', 'tags']);
+
+            // Filter by category
+            if ($request->filled('category')) {
+                $category = $request->get('category');
+
+                $query->whereHas('categories', function ($q) use ($category) {
+                    $q->where(function ($sub) use ($category) {
+                        $sub->where('categories.id', $category)
+                            ->orWhere('categories.slug', $category)
+                            ->orWhere('categories.name', 'like', '%' . $category . '%');
+                    });
+                });
+            }
+
+            // Filter by author
+            if ($request->filled('author')) {
+                $author = $request->get('author');
+
+                $query->whereHas('author', function ($q) use ($author) {
+                    $q->where(function ($sub) use ($author) {
+                        $sub->where('users.id', $author)
+                            ->orWhere('users.name', 'like', '%' . $author . '%');
+                    });
+                });
+            }
+
+            // Sorting (default: terbaru)
+            $query->latest();
+
+            // Pagination (limit biar aman)
+            $perPage = min($request->get('per_page', 10), 50);
+
+            $articles = $query->paginate($perPage)->appends($request->query());
+
             return response()->json([
                 'success' => true,
                 'data' => $articles
             ], 200);
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             return response()->json([
                 'success' => false,
-                'message' => 'Failed to retrieve articles',
-                'error' => $e->getMessage()
+                'message' => 'Gagal mengambil data artikel',
+                'error' => config('app.debug') ? $e->getMessage() : null
             ], 500);
         }
     }
