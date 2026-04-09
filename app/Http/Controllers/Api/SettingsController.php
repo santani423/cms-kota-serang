@@ -27,12 +27,12 @@ class SettingsController extends Controller
                 "subMenu" => [
                     [
                         "title" => "Walikota Serang",
-                        "href" => "/informasi-publik/profil",
+                        "href" => "/leadership/walikota-serang",
                         "desc" => "",
                     ],
                     [
                         "title" => "Wakil Walikota Serang",
-                        "href" => "/informasi-publik/profil",
+                        "href" => "/leadership/wakil-walikota-serang",
                         "desc" => "",
                     ],
                     [
