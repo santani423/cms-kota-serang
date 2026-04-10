@@ -42,7 +42,7 @@ class SettingsController extends Controller
                     ],
                     [
                         "title" => "Sejarah Kota Serang",
-                        "href" => "/sejarah-kota-serang",
+                        "href" => "/city-history",
                         "desc" => "",
                     ],
                     [
