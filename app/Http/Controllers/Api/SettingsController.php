@@ -37,27 +37,27 @@ class SettingsController extends Controller
                     ],
                     [
                         "title" => "Visi Misi",
-                        "href" => "/informasi-publik/profil",
+                        "href" => "/visi-misi",
                         "desc" => "",
                     ],
                     [
                         "title" => "Sejarah Kota Serang",
-                        "href" => "/informasi-publik/profil",
+                        "href" => "/sejarah-kota-serang",
                         "desc" => "",
                     ],
                     [
                         "title" => "Arti Lambang Kota Serang",
-                        "href" => "/informasi-publik/profil",
+                        "href" => "/arti-lambang-kota-serang",
                         "desc" => "",
                     ],
                     [
                         "title" => "Penghargaan",
-                        "href" => "/informasi-publik/profil",
+                        "href" => "/penghargaan",
                         "desc" => "",
                     ],
                     [
                         "title" => "Latar Geografi",
-                        "href" => "/informasi-publik/profil",
+                        "href" => "/latar-geografi",
                         "desc" => "",
                     ],
                     [
