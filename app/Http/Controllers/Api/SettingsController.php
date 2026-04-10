@@ -74,8 +74,8 @@ class SettingsController extends Controller
             ],
             [
                 "code" => "wisata",
-                "title" => "Wisata",
-                "href" => "/tourism",
+                "title" => "Kearifan Lokal",
+                "href" => "/cultural-heritage",
             ],
         ];
 
