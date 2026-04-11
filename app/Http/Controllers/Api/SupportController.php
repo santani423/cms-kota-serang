@@ -11,9 +11,9 @@ class SupportController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'email' => 'required|string|max:255',
+            'email' => 'nullable|string|max:255',
             'hp' => 'nullable|string|max:255',
-            'message' => 'required|string',
+            'message' => 'nullable|string',
         ]);
         return response()->json(['message' => 'Support request received successfully.'], 200);
 
