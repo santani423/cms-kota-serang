@@ -15,7 +15,7 @@ class SupportController extends Controller
             'hp' => 'nullable|string|max:255',
             'message' => 'nullable|string',
         ]);
-        return response()->json(['message' => 'Support request received successfully.'], 200);
+        // return response()->json(['message' => 'Support request received successfully.'], 200);
 
         // Here you can handle the support request, e.g., save it to the database or send an email
         $support = new MassageSupport();
