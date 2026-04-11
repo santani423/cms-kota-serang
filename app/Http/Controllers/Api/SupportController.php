@@ -9,8 +9,9 @@ class SupportController extends Controller
 {
     public function store(Request $request)
     {
+        return response()->json(['message' => 'Support request received successfully.'], 200);
         $request->validate([
-            'email' => 'required|email|max:255',
+            'email' => 'required|string|max:255',
             'hp' => 'nullable|string|max:255',
             'message' => 'required|string',
         ]);
