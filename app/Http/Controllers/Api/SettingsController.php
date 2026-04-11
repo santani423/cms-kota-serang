@@ -417,4 +417,7 @@ class SettingsController extends Controller
             "data" => $data,
         ]);
     }
+
+
+    
 }
