@@ -114,6 +114,49 @@ class SettingsController extends Controller
         ]);
     }
 
+    public function support()
+    {
+
+        $baseUrl = env('APP_URL');
+        $data = [
+            [
+                'code' => 'email1',
+                'active' => true,
+                'value' => 'santani423@gmail.com',
+            ],
+            [
+                'code' => 'email2',
+                'active' => true,
+                'value' => 'contact@santani.dev',
+            ],
+            [
+                'code' => 'hp',
+                'active' => true,
+                'value' => '085778674418',
+            ],
+            [
+                'code' => 'webporto',
+                'active' => true,
+                'value' => 'https://santani.dev',
+            ],
+            [
+                'code' => 'Saweria',
+                'active' => true,
+                'value' => 'https://saweria.co/santani',
+            ],
+            [
+                'code' => 'qr',
+                'active' => true,
+                'value' => $baseUrl . '/assets/hompage/4.jpg',
+            ],
+        ];
+
+        return response()->json([
+            "status" => "success",
+            "data" => $data,
+        ]);
+    }
+
     public function getHomepage(Request $request)
     {
 
